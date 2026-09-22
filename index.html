@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luiz Augusto | Portfólio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- CABEÇALHO / PERFIL -->
+        <header class="hero">
+            <div class="profile-container">
+                <img src="foto.jpg" alt="Luiz Augusto dos Santos de Cristo" class="profile-img">
+            </div>
+
+            <h1>Luiz Augusto dos Santos de Cristo</h1>
+            <span class="badge-title">Desenvolvedor Fullstack</span>
+
+            <p class="bio">
+                Desenvolvedor Fullstack focado em criar soluções eficientes e modernas. Atualmente estudando
+                Desenvolvimento de Sistemas e atuando na Metalúrgica Schwarz.
+            </p>
+        </header>
+
+        <!-- SOBRE MIM E EXPERIÊNCIA -->
+        <section class="card">
+            <h2 class="section-title">Sobre Mim & Trajetória</h2>
+            <div class="grid-info">
+
+                <div class="info-box">
+                    <h3>Formação em TI</h3>
+                    <p>Há quase 2 anos realizando o curso de <strong>Desenvolvimento de Sistemas</strong>, aprimorando
+                        conhecimentos em front-end, back-end e banco de dados.</p>
+                </div>
+
+                <div class="info-box">
+                    <h3>Atuação Profissional</h3>
+                    <p>Atualmente trabalhando na <strong>Metalúrgica Schwarz</strong>, aplicando disciplina, trabalho em
+                        equipe e resolução de problemas na rotina diária, atuando como desenvolvedor.</p>
+                </div>
+
+                <div class="info-box hobby-box">
+                    <h3>Passatempo Favorito</h3>
+                    <p>Adoro jogar <strong>Vôlei</strong> 🏐. O esporte me ajuda a manter o foco, o raciocínio rápido e
+                        o espírito de equipe dentro e fora do código.</p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- SEÇÃO DE HABILIDADES TÉCNICAS -->
+        <section class="card">
+            <h2 class="section-title">Habilidades & Tecnologias</h2>
+            <div class="grid-info">
+                <div class="info-box">
+                    <h3>Front-End</h3>
+                    <p>HTML5, CSS3, JavaScript, Interfaces Responsivas e Modernas.</p>
+                </div>
+                <div class="info-box">
+                    <h3>Back-End & Banco de Dados</h3>
+                    <p>Lógica de Programação, Estruturas de Dados e Bancos de Dados Relacionais, além de diversas
+                        linguagens como C#, Java, Python e etc.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- NOVA SEÇÃO: MEUS TRABALHOS (CARROSSEL COM ROLAGEM VIA JS) -->
+        <section class="card">
+            <h2 class="section-title">Meus Trabalhos & Projetos</h2>
+
+            <div class="carousel-wrapper">
+                <button class="carousel-btn prev-btn" id="prevBtn" aria-label="Anterior">&#10094;</button>
+
+                <div class="carousel-container" id="carousel">
+                    <!-- PROJETO 1 -->
+                    <div class="project-card">
+                        <h3>Sistema Interno Escolar</h3>
+                        <p>Automação e gerenciamento de Login de novos Alunos, Saída e entrada de Material escolar.</p>
+                        <span class="tech-tag">C# / .NET</span>
+                        <span class="tech-tag">SQL Server</span>
+                    </div>
+
+                    <!-- PROJETO 2 -->
+                    <div class="project-card">
+                        <h3>Painel de Indicadores (Dashboard)</h3>
+                        <p>Interface responsiva em JavaScript para monitoramento em tempo real de métricas de chamados
+                            da Engenharia dentro da Schwarz.</p>
+                        <span class="tech-tag">HTML/CSS</span>
+                        <span class="tech-tag">JavaScript</span>
+                    </div>
+
+                    <!-- PROJETO 3 -->
+                    <div class="project-card">
+                        <h3>API RESTful com Python</h3>
+                        <p>Desenvolvimento de serviços backend para integração de dados corporativos.</p>
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">REST API</span>
+                    </div>
+
+                    <!-- PROJETO 4 -->
+                    <div class="project-card">
+                        <h3>Aplicação de Gestão Java</h3>
+                        <p>Sistema orientado a objetos para controle de dados e geração de relatórios.</p>
+                        <span class="tech-tag">Java</span>
+                        <span class="tech-tag">MySQL</span>
+                    </div>
+                </div>
+
+                <button class="carousel-btn next-btn" id="nextBtn" aria-label="Próximo">&#10095;</button>
+            </div>
+        </section>
+
+        <footer>
+            <p>&copy; Luiz Augusto dos Santos de Cristo. Todos os direitos reservados.</p>
+            <h4>Informações de Contato</h4>
+            <p>luizizoo564@gmail.com | (41) 99239-8142</p>
+        </footer>
+    </div>
+
+    <!-- SCRIPT JAVASCRIPT PARA A ROLAGEM DOS TRABALHOS -->
+    <script>
+        const carousel = document.getElementById('carousel');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+
+        // Distância que o carrossel rola a cada clique
+        const scrollAmount = 300;
+
+        nextBtn.addEventListener('click', () => {
+            carousel.scrollBy({
+                left: scrollAmount,
+                behavior: 'smooth'
+            });
+        });
+
+        prevBtn.addEventListener('click', () => {
+            carousel.scrollBy({
+                left: -scrollAmount,
+                behavior: 'smooth'
+            });
+        });
+    </script>
+</body>
+
+</html>
