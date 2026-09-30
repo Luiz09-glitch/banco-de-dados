@@ -1,1 +1,270 @@
+Nenhum selecionado
+
+Pular para o conteúdo
+Como usar o E-mail de SEED com leitores de tela
+1 de 5.077
+(sem assunto)
+External
+Caixa de entrada
+
+Luiz Augusto
+11:52 (há 0 minuto)
+para mim
+
+Parece que esta mensagem está em inglês
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Meu Site</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #F3F6F9;
+    --surface: #FFFFFF;
+    --ink: #1B2638;
+    --muted: #5B6778;
+    --line: #D6DEE8;
+    --accent: #1F6F8B;
+    --accent-ink: #FFFFFF;
+    box-sizing: border-box;
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #121A24; --surface: #1A2431; --ink: #E7EDF4;
+      --muted: #9AA7B8; --line: #2C3A4B; --accent: #5FB3CF; --accent-ink: #0E1620;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #121A24; --surface: #1A2431; --ink: #E7EDF4;
+    --muted: #9AA7B8; --line: #2C3A4B; --accent: #5FB3CF; --accent-ink: #0E1620;
+  }
+  *, *::before, *::after { box-sizing: inherit; }
+  html { scroll-padding-top: env(safe-area-inset-top, 0px); }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: "Manrope", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    line-height: 1.6;
+  }
+
+  /* Header */
+  header {
+    position: sticky;
+    top: env(safe-area-inset-top, 0px);
+    z-index: 10;
+    background: var(--surface);
+    border-bottom: 1px solid var(--line);
+  }
+  .bar {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 0.9rem 1.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  .logo {
+    font-weight: 800;
+    font-size: 1.2rem;
+    color: var(--ink);
+    text-decoration: none;
+  }
+  nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 0.25rem;
+    flex-wrap: wrap;
+  }
+  nav a {
+    display: block;
+    padding: 0.45rem 0.8rem;
+    border-radius: 8px;
+    color: var(--muted);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+  }
+  nav a:hover { color: var(--ink); background: var(--bg); }
+  nav a[aria-current="page"] { color: var(--accent-ink); background: var(--accent); }
+  a:focus-visible, textarea:focus-visible, button:focus-visible {
+    outline: 3px solid var(--accent);
+    outline-offset: 2px;
+  }
+
+  /* Conteúdo */
+  main {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 2.5rem 1.25rem 4rem;
+  }
+  section[hidden] { display: none; }
+  h1 {
+    font-size: clamp(1.8rem, 5vw, 2.6rem);
+    line-height: 1.15;
+    margin: 0 0 0.5rem;
+    font-weight: 800;
+  }
+  .intro { color: var(--muted); margin: 0 0 1.75rem; max-width: 60ch; }
+
+  label { display: block; font-weight: 600; margin-bottom: 0.5rem; }
+  textarea {
+    width: 100%;
+    min-height: 260px;
+    resize: vertical;
+    padding: 1rem;
+    font: inherit;
+    font-size: 1rem;
+    color: var(--ink);
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+  }
+  .rodape-texto {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 0.75rem;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  .contador { color: var(--muted); font-size: 0.9rem; }
+  button {
+    font: inherit;
+    font-weight: 600;
+    padding: 0.6rem 1.2rem;
+    border: none;
+    border-radius: 10px;
+    background: var(--accent);
+    color: var(--accent-ink);
+    cursor: pointer;
+  }
+  button.secundario { background: transparent; color: var(--muted); border: 1px solid var(--line); }
+  .acoes { display: flex; gap: 0.5rem; }
+  .aviso { color: var(--accent); font-weight: 600; min-height: 1.6em; margin-top: 0.5rem; }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="bar">
+    <a href="#inicio" class="logo">Meu Site</a>
+    <nav aria-label="Navegação principal">
+      <ul>
+        <li><a href="#inicio" data-alvo="inicio">Início</a></li>
+        <li><a href="#projetos" data-alvo="projetos">Projetos</a></li>
+        <li><a href="#colaboradores" data-alvo="colaboradores">Colaboradores</a></li>
+        <li><a href="#sobre" data-alvo="sobre">Sobre nós</a></li>
+        <li><a href="#contato" data-alvo="contato">Contato</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section id="inicio">
+    <h1>Bem-vindo</h1>
+    <p class="intro">Escreva seu texto abaixo. O conteúdo fica salvo neste navegador enquanto você digita.</p>
+    <label for="texto">Seu texto</label>
+    <textarea id="texto" placeholder="Comece a escrever aqui..."></textarea>
+    <div class="rodape-texto">
+      <span class="contador" id="contador">0 caracteres · 0 palavras</span>
+      <div class="acoes">
+        <button type="button" class="secundario" id="limpar">Limpar</button>
+        <button type="button" id="copiar">Copiar texto</button>
+      </div>
+    </div>
+    <p class="aviso" id="aviso" role="status"></p>
+  </section>
+
+  <section id="projetos" hidden>
+    <h1>Projetos</h1>
+    <p class="intro">Aqui você pode apresentar os projetos em andamento e os já concluídos.</p>
+  </section>
+
+  <section id="colaboradores" hidden>
+    <h1>Colaboradores</h1>
+    <p class="intro">Apresente as pessoas que fazem parte da equipe e o papel de cada uma.</p>
+  </section>
+
+  <section id="sobre" hidden>
+    <h1>Sobre nós</h1>
+    <p class="intro">Conte a história, a missão e os valores da sua organização.</p>
+  </section>
+
+  <section id="contato" hidden>
+    <h1>Contato</h1>
+    <p class="intro">Coloque aqui e-mail, telefone, endereço e redes sociais.</p>
+  </section>
+</main>
+
+<script>
+  // Navegação entre seções
+  const links = document.querySelectorAll("nav a[data-alvo]");
+  const secoes = document.querySelectorAll("main section");
+
+  function mostrar(id) {
+    if (!document.getElementById(id)) id = "inicio";
+    secoes.forEach(s => s.hidden = s.id !== id);
+    links.forEach(a => {
+      if (a.dataset.alvo === id) a.setAttribute("aria-current", "page");
+      else a.removeAttribute("aria-current");
+    });
+    window.scrollTo(0, 0);
+  }
+  window.addEventListener("hashchange", () => mostrar(location.hash.slice(1)));
+  mostrar(location.hash.slice(1) || "inicio");
+
+  // Área de texto
+  const texto = document.getElementById("texto");
+  const contador = document.getElementById("contador");
+  const aviso = document.getElementById("aviso");
+
+  try { texto.value = localStorage.getItem("texto-salvo") || ""; } catch (e) {}
+
+  function atualizar() {
+    const v = texto.value;
+    const palavras = v.trim() ? v.trim().split(/\s+/).length : 0;
+    contador.textContent = `${v.length} caracteres · ${palavras} palavras`;
+    try { localStorage.setItem("texto-salvo", v); } catch (e) {}
+  }
+  texto.addEventListener("input", atualizar);
+  atualizar();
+
+  function avisar(msg) {
+    aviso.textContent = msg;
+    setTimeout(() => aviso.textContent = "", 2000);
+  }
+
+  document.getElementById("limpar").addEventListener("click", () => {
+    texto.value = "";
+    atualizar();
+    texto.focus();
+    avisar("Texto apagado.");
+  });
+
+  document.getElementById("copiar").addEventListener("click", async () => {
+    try {
+      await navigator.clipboard.writeText(texto.value);
+      avisar("Texto copiado.");
+    } catch (e) {
+      texto.select();
+      document.execCommand("copy");
+      avisar("Texto copiado.");
+    }
+  });
+</script>
+</body>
+</html>
+
 
